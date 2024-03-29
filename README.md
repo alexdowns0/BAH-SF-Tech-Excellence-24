@@ -1,18 +1,8 @@
-# Salesforce DX Project: Next Steps
+BAH-SF-Tech-Excellence-24
+BAH Tech Excellence Program January 2024 - March 2024 Repository for Tech Excellence Salesforce Development in collaboration with Stony Point, Inc. During this program, the class program used Apex, JavaScript, HTML, and CSS to create backend features, Visualforce, and LWC Components for a mock company "GenWatt Finance" and "GenWatt Recruiting"
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+FEATURED BUILDS:
 
-## How Do You Plan to Deploy Your Changes?
+Create Payment Plan Visualforce Page: Visualforce Page that shows all invoices from custom Invoice__c object that is the child of the Opportunity object. The page displays all listed invoices on a specific opportunity, the invoice due date, variance from what has been paid verses what payments remain, and current payments total
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+Recruiting Details Page: App Page showing all related Recruiting Details for the custom objects: Position__c, Reviews__c, Application__c, and Interviewers__c. The page was built from LWC components.
