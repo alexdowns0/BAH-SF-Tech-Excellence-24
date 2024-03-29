@@ -1,0 +1,22 @@
+<template>
+    <lightning-combobox label="Status Filter" value={status} options={comboOptions} onchange={handleChange}></lightning-combobox>
+    <div>
+        <p>Total Records: {totalRecords}</p>
+    </div>
+    <template lwc:if={casesToDisplay}>
+        <template for:each={records} for:item="cas">
+            <div key={cas.fields.Id.value}>
+                <!-- just communicating with case card values with public properties 
+                    wouldn't just put the case card in there because you might have additional info that you may not need -->
+                <c-case-card case-id={cas.fields.Id.value} status={cas.fields.Status.value} priority={cas.fields.Priority.value}
+                    case-number={cas.fields.CaseNumber.value} subject={cas.fields.Subject.value}>
+
+                </c-case-card>
+            </div>
+        </template>
+
+    </template>
+    <template lwc:else>
+        <p>No related cases to display...</p>
+    </template>
+</template>

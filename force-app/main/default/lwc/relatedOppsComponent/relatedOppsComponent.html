@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Related Opps Component">
+        <!-- <lightning-button label="Show Opps" onclick={getRelatedOpps}></lightning-button> -->
+        <div><p>You selected: ID: {selectedId} {selectedName}</p></div>
+        <template lwc:if={opps}>
+            <template for:each={opps} for:item="opp">
+                <div key={opp.Id}>
+                    <!-- <p>{opp.Name} {opp.Amount} {opp.CloseDate} {opp.StageName}</p> -->
+                    <c-opp-card opp-id={opp.Id} opp-name={opp.Name} opp-amount={opp.Amount} stage={opp.StageName} 
+                        close-date={opp.CloseDate} onoppselected={handleOppEvent}></c-opp-card>
+                        <!-- use a lightning-record form to display full details of an Opp record only when user 
+                         selects it from the list (lightning record form should not be displaying until record is selected)-->
+                </div>
+            </template>
+        </template>
+        <template lwc:else>
+            <p>No opp records to display...</p>
+        </template>
+        <!-- here is wehre record form displays, we need to konw the id of the record , need pass ojbapi name, mode, layout type (full details)-->
+        <template lwc:if={showOne}>
+            <lightning-record-form 
+                record-id={selectedId} 
+                object-api-name="Opportunity"
+                mode="view"
+                layout-type= "Full"
+        ></lightning-record-form>
+
+
+        </template>
+
+    </lightning-card>
+</template>

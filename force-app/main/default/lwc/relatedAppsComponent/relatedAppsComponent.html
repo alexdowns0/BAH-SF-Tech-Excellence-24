@@ -1,0 +1,27 @@
+<template>
+    <div slot="actions" class="slds-list_vertical">
+        <lightning-card title="Related Apps Component">
+            <!-- if apps are returned/populated, iterate through each and display in app card-->
+            <template lwc:if={apps}>
+                <template for:each={apps} for:item="app">
+                    <div key={app.Id}>
+                        <c-app-card app-id={app.Id} app-name={app.Name} app-candidate={app.Candidate__c} app-status={app.Status__c} 
+                            app-num-of-reviews={app.Num_of_Reviews__c} onappselected={handleAppEvent}></c-app-card>
+                    </div>
+                </template>
+            </template>
+            <template lwc:else>
+                <p>No app records to display...</p>
+            </template>
+            <!-- Display Application Record Form-->
+            <template lwc:if={showOne}>
+                <lightning-record-form 
+                    record-id={selectedId} 
+                    object-api-name="Application__c"
+                    mode="view"
+                    layout-type= "Full"
+            ></lightning-record-form>
+            </template>
+        </lightning-card>
+    </div>
+</template>

@@ -1,0 +1,58 @@
+<!-- extra credit: a) create 2nd method in one of classes and see if you can do import b) review what we talked abt before in regards to design-->
+<template>
+    <lightning-card title="Exercise Three">
+        <div class="slds-m-left_small">
+        <lightning-button title="Show Accounts" label="Show Accounts" onclick={toggleSectionOne}></lightning-button>
+        <lightning-button title="Show Opportunities" label="Show Opportunities" onclick={toggleSectionTwo}></lightning-button>
+        <template lwc:if={loadingAccounts}>
+            <lightning-spinner></lightning-spinner>
+        </template>
+        <template lwc:if={showOne}>
+            <template for:each={accounts} for:item="acc">
+                <div key={acc.Id}>
+                    <p>Name: {acc.Name} | Annual Revenue: {acc.AnnualRevenue} | Phone: {acc.Phone}</p>
+                </div>
+            </template>
+        </template>
+        <template lwc:if={loadingOpps}>
+            <lightning-spinner></lightning-spinner>
+        </template>
+        <template lwc:if={showTwo}>
+            <template for:each={opps} for:item="opp">
+                <div key={opp.Id}>
+                    <p>Name: {opp.Name} | Amount: {opp.Amount} | Close Date: {opp.CloseDate}</p>
+                </div>
+            </template>
+        </template>
+        </div>
+    </lightning-card>
+</template>   
+<!-- I commented out my code to make sure I had spinner in proper place -->
+      <!--   <template lwc:if={showOne}>
+            <template lwc:if={loadingAccounts}>
+                <lightning-spinner></lightning-spinner>
+            </template>
+            <template for:each={accounts} for:item="acc">
+                <div key={acc.Id}>
+                    <p>{acc.Id}:  Name: {acc.Name} | Title: {acc.AnnualRevenue}</p>
+                </div>
+            </template>
+        </template>
+        <template lwc:else>
+            <p>No Accounts Displaying...</p>
+        </template>
+        <lightning-button title="Show Section Two" label="Show Section Two" onclick={toggleSectionTwo}></lightning-button>
+        <template lwc:if={showTwo}>
+            <template for:each={opps} for:item="opp">
+                <div key={opp.Id}>
+                    <p>{opp.Id}:  Name: {opp.Name} | Title: {opp.Amount}</p>
+                </div>
+            </template>
+        </template>
+        <template lwc:else>
+            <p>No Opportunities Displaying...</p>
+        </template>
+
+    </div>
+    </lightning-card>
+</template>   -->

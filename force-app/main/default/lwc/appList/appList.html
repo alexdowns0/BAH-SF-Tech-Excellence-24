@@ -1,0 +1,13 @@
+<template>
+    <template lwc:if={appsToDisplay}>
+        <template for:each={records} for:item="rec">
+            <div key={rec.fields.Id.value}>
+                <c-app-card app-id={rec.fields.Id.value} app-name={rec.fields.Name.value} app-candidate={rec.fields.Name.value}
+                app-status={rec.fields.Status__c.value} app-num-of-reviews={rec.fields.Num_of_Reviews__c.value} app-review-score={rec.fields.Review_Score__c.value}></c-app-card>
+            </div>
+        </template>
+    </template>
+    <template lwc:else>
+        <p>No application records to display....</p>
+    </template>
+</template>

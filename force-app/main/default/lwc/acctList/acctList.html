@@ -1,0 +1,37 @@
+<template>
+<div class="slds-list_horizontal">
+    <lightning-card title="Account List" icon-name="standard:account">
+       <div slot="actions">
+        <lightning-button variant="Neutral" label="New" title="New Account" onclick={newAccount} class="slds-m-right_small"></lightning-button>
+    </div>
+        <!-- <div><h2><b><center>You selected: ID: {selectedId} Name: {selectedName}</center> </b></h2></div> -->
+        <template lwc:if={accsToDisplay}>
+        <template for:each={accs} for:item="acct" for:index="index">
+               <div key={acct.Id}> 
+                
+                    <!-- just communicating with case card values with public properties 
+                        wouldn't just put the case card in there because you might have additional info that you may not need -->
+                    
+                    <c-acct-card rank={index} acc-id={acct.Id} acc-name={acct.Name} phone={acct.Phone}
+                        ann-rev={acct.AnnualRevenue} onacctselected={handleSelection}>
+
+                    </c-acct-card> 
+            </div>
+            
+            </template>
+            </template>
+            <template lwc:else>
+                <p>No related cases to display...</p>
+            </template>
+
+      <!--       <template lwc:if={showOne}>
+                <lightning-record-form 
+                    record-id={selectedId} 
+                    object-api-name="Account"
+                    mode="readonly"
+                    layout-type= "Compact"
+            ></lightning-record-form>
+        </template> -->
+    </lightning-card>
+</div>
+</template>

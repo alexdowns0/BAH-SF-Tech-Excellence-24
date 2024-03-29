@@ -1,0 +1,23 @@
+<template>
+    <lightning-card>  
+          <h3 title={posName}>
+            <!-- icon to select an interviewer -->
+            <div class="slds-float_right" slot="actions">
+                <lightning-button-icon icon-name="utility:adduser" alternative-text="Add Interviewer" class="slds-float_left" size="small" title="Add Interviewer" onclick={addInterviewer}></lightning-button-icon>
+            </div>  
+                <a onclick={positionSelected}> <b>{ranking}. {posName}</b></a></h3>
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Salary">Salary:</dt>
+                    <!-- <dd class="slds-item_detail slds-truncate" title={posSalary}>${posSalary}</dd> -->
+                    <dd class="slds-item_detail slds-truncate" title={posSalary}><p>$<lightning-formatted-number value={posSalary} maximum-fraction-digits="2"></lightning-formatted-number></p></dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Status">Status:</dt>
+                    <dd class="slds-item_detail slds-truncate" title={posStatus}><a>{posStatus}</a></dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Number of Applications">Number of Applications:</dt>
+                    <dd class="slds-item_detail slds-truncate" title={posNumApplications}><a>{posNumApplications}</a></dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Urgency">Urgency:</dt>
+                    <lightning-formatted-rich-text value={posUrgency} ></lightning-formatted-rich-text>
+
+                </dl>    
+       
+    </lightning-card>
+</template>

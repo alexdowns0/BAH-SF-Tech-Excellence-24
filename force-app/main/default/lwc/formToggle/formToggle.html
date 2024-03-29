@@ -1,0 +1,11 @@
+<template>
+    <template lwc:if={editMode}>
+        <lightning-button label="Read Only" onclick={toggleMode}></lightning-button>
+        <c-opp-record-form record-id={recordId} object-api-name={objectApiName} 
+            form-mode="edit" layout-type="Compact" onoppsaved={handleOppSaved} onoppcanceled={handleOppSaved}></c-opp-record-form>
+    </template>
+    <template lwc:else>
+        <lightning-button label="Edit" onclick={toggleMode}></lightning-button>
+        <c-opp-record-form record-id={recordId} object-api-name={objectApiName} form-mode="readonly" layout-type="Compact"></c-opp-record-form>
+    </template>
+</template>

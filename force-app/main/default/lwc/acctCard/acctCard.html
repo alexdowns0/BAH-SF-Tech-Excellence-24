@@ -1,0 +1,37 @@
+<template>
+    <lightning-card>
+
+        <div class="slds-m-left_medium">
+          <h3 title={accName}>
+                <a onclick={acctSelected}> <b>{ranking}. {accName}</b></a></h3>
+                &nbsp;
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Annual Revenue">Annual Revenue:</dt>
+                    <dd class="slds-item_detail slds-truncate" title={annRev}>${annRev}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Phone">Phone:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Description for second label"><a>{phone}</a></dd>
+                </dl>    
+           
+                <div class="slds-checkbox">
+                    <input type="checkbox" name="options" id="checkbox-unique-id-81" value="checkbox-unique-id-81" onclick={returnContacts}  />
+                        <label class="slds-checkbox__label" for="checkbox-unique-id-81">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label"> Show Contacts?</span>
+                        </label>
+                        <template lwc:if={checkboxChecked}>
+                            <template for:each={contacts} for:item="con">
+                                <div key={con.Id}>
+                                    <ul class="slds-list_horizontal slds-has-dividers_right">
+                                        <li class="slds-item"><lightning-icon icon-name="standard:contact" size="xx-small"></lightning-icon></li>
+                                        <li class="slds-item"><p>{con.Name}</p></li>
+                                        <li class="slds-item"><p>{con.Title}</p></li>
+                                        <li class="slds-item"><lightning-icon icon-name="utility:email" size="xx-small"></lightning-icon><p><a> {con.Email}</a></p></li>
+                                    </ul>
+                                </div>
+                            </template>   
+                        </template>
+                </div>
+            
+        </div>
+    </lightning-card>
+</template>

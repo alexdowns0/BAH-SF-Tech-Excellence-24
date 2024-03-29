@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="My Component">
+        <div class="slds-m-left_small">
+        <lightning-button title="Show Contacts" label="Show Contacts" onclick={toggleView}></lightning-button>
+        <!-- no particular reason for two templates, could do this with div tag -->
+        <!-- SF prefers these on the template tags, not the div -->
+        <!-- Using templates so that we can manipulate the DOM without having to select elements/update -->
+        <template lwc:if={showContacts}>
+            <!-- if we use foreeach then you must use the key attribute to specify what will be an index/key val -->
+            <!-- accessing the id property from con -->
+            <template for:each={contacts} for:item="con" for:index="idx">
+                
+                <!-- key attribute: -->
+                <div key={con.Id}>
+                    <p>{idx}.  Name: {con.Name} | Title: {con.Title}</p>
+
+                </div>
+            </template>
+        </template>
+        <template lwc:else>
+            <p>No Contacts Displaying...</p>
+        </template>
+    </div>
+    </lightning-card>
+</template>  

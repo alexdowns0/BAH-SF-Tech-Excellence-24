@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Position List" icon-name="standard:job_position">
+        <div><center><b>Select Status:</b></center></div>
+            <lightning-combobox value={status} options={comboOptions} onchange={handleChange}></lightning-combobox>
+                <div slot="actions">
+                    <lightning-button variant="Neutral" label="New" title="New Position" onclick={newPosition}
+                        class="slds-m-right_small"></lightning-button>
+                </div>
+                        <template lwc:if={posToDisplay}>
+                            <template for:each={records} for:item="po" for:index="index">
+                                <div key={po.Id} class="slds-m-left_small">
+                                    <c-position-card rank={index} pos-id={po.Id} pos-name={po.Name} pos-salary={po.Salary__c}
+                                        pos-status={po.Status__c} pos-num-applications={po.Num_of_Applications__c} pos-urgency={po.Urgency__c} onposselected={handleSelection}>
+                                    </c-position-card>
+                                </div>
+                            </template>
+                         </template>
+                            <template lwc:else>
+                                <p>No related positions to display...</p>
+                            </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,17 @@
+<template>
+    <lightning-modal-header label={headerLabel}></lightning-modal-header>
+    <lightning-modal-body>
+        <lightning-record-edit-form record-id={recordId} object-api-name={objectApiName} oncancel={handleCancel}
+            onsuccess={handleSuccess}>
+            <lightning-input-field field-name="Position__c" value={positionRecord}></lightning-input-field>
+            <lightning-input-field field-name="Name"></lightning-input-field>
+            <lightning-input-field field-name="Interviewer__c" ></lightning-input-field>
+            <div class="slds-m-top_medium">
+                <lightning-button variant="brand" type="submit" name="save" label="Add Interviewer"></lightning-button> 
+            </div>
+        </lightning-record-edit-form> 
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <p class="slds-align_absolute-center">This information is the sole property of GenWatt, Inc.</p>
+    </lightning-modal-footer>
+</template>

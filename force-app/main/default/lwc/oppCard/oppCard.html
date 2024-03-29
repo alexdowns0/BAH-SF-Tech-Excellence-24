@@ -1,0 +1,24 @@
+<template>
+    <lightning-card>
+        <div class="demo-only" style="width:20rem;">
+            <article class="slds-tile slds-m-left_medium">
+                <h3 class="slds-tile__title slds-truncate" title={oppName}>
+                    <a onclick={oppSelected}>{oppName}</a>
+                    <div slot="actions">
+                    <lightning-icon class="slds-float_right" title="Edit" size="x-small" icon-name="utility:edit" onclick={editOpp}></lightning-icon>
+                    </div>
+                </h3>
+                <div class="slds-tile__detail ">
+                    <dl class="slds-list_horizontal slds-wrap">
+                        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">Stage:</dt>
+                        <dd class="slds-item_detail slds-truncate" title="Description for first label">{stage}</dd>
+                        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Second Label">Amount:</dt>
+                        <dd class="slds-item_detail slds-truncate" title="Description for second label">{oppAmount}</dd>
+                        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Second Label">Close Date:</dt>
+                        <dd class="slds-item_detail slds-truncate" title="Description for second label">{closeDate}</dd>
+                    </dl>
+                </div>
+            </article>
+        </div>
+    </lightning-card>
+</template>

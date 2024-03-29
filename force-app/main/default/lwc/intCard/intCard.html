@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <article class="slds-tile slds-m-left_medium">
+            <h3 class="slds-tile__title slds-truncate" title={intName}>
+                <a onclick={intSelected}>{intName}</a>
+                <div slot="actions">
+                    <lightning-icon class="slds-float_right" title="Edit" size="x-small" icon-name="utility:edit"
+                        onclick={editInt}></lightning-icon>
+                </div>
+            </h3>
+            <div class="slds-tile__detail ">
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Interviewer Name">
+                        Interviewer:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Interviewr Name">{intInterviewer}</dd>
+                </dl>
+            </div>
+        </article>
+    </lightning-card>
+</template>

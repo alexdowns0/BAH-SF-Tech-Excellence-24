@@ -1,0 +1,53 @@
+<template>
+    <lightning-card>
+        <article class="slds-tile slds-m-left_medium">
+            <h3 class="slds-tile__title slds-truncate" title={appName}>
+                <a onclick={appSelected}>{appName}</a>
+                <div slot="actions">
+                    <lightning-icon class="slds-float_right" title="Edit" size="x-small" icon-name="utility:edit"
+                        onclick={editApp}></lightning-icon>
+                </div>
+            </h3>
+            <div class="slds-tile__detail ">
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Status">Status:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Status">{appStatus}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Applicant Candidate">Applicant
+                        Candidate:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Applicant Candidate">{appCandidate}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Application Review Score">
+                        Review Score:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Application Review Score">{appReviewScore}</dd>
+                </dl>
+                <div class="slds-checkbox">
+                    <input type="checkbox" name="options" id="checkbox-unique-id-81" value={showReviews}
+                        onchange={returnReviews} />
+                    <label class="slds-checkbox__label" for="checkbox-unique-id-81">
+                        <span class="slds-checkbox_faux"></span>
+                        <span class="slds-form-element__label"> Show Reviews?</span>
+                    </label>
+                   
+                </div>
+            </div>
+        </article>
+        <template lwc:if={showReviews}>
+            <template for:each={reviews} for:item="rev">
+                <div key={rev.Id}>
+                    <ul class="slds-list_horizontal slds-has-dividers_right">
+                        <li class="slds-item"><lightning-icon icon-name="utility:rating"
+                                size="xx-small"></lightning-icon></li>
+                        <li class="slds-item">
+                            <p>{rev.Name}</p>
+                        </li>
+                        <li class="slds-item">
+                            <p>{rev.Interviewer__r.Interviewer__r.Name}</p>
+                        </li>
+                        <li class="slds-item">
+                            <p>Cultural Fit: {rev.Cultural_Fit__c}</p>
+                        </li>
+                    </ul>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>

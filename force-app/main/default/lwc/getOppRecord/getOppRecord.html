@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Opportunity Info" icon-name="standard:opportunity">
+        <template lwc:if={opportunity.data}>
+            <ul class="slds-list_dotted">
+                <li>Name: {name}</li>
+                <li>Type: {type}</li>
+                <li>Amount: {amount}</li>
+                <li>Stage Name: {stageName}</li>
+                <li>Close Date: {closeDate}</li>
+            </ul>
+        </template>
+        <template lwc:elseif={opportunity.error}>
+            <p>Error retrieving opportunity record...</p>
+        </template>
+        <template lwc:else>
+            <p>No opportunity record displaying...</p>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,16 @@
+<template>
+    <div slot="actions" class="slds-list_vertical">
+    <lightning-card title={detailLabel} icon-name="custom:custom18">
+        <lightning-accordion allow-multiple-sections-open
+                         onsectiontoggle={handleSectionToggle}
+                         active-section-name={activeSections}>
+            <lightning-accordion-section name="Applications" label={appLabel}>
+                <c-app-list record-id={positionId} onappcount={updateAppLabel}></c-app-list>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="Interviewers" label={interviewerLabel}>
+                <c-int-list record-id={positionId} onintcount={updateIntLabel}></c-int-list>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </lightning-card>
+    </div>
+</template>

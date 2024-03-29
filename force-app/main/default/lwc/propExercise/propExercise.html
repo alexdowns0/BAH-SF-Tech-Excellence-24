@@ -1,0 +1,10 @@
+<template>
+    <lightning-card  title="Prop Exercise">
+        <section title="First Section">
+            <p>Welcome to the public properties exercise</p>
+        </section>
+            <template lwc:if={showDetails}>
+                <p>This is the second section, {cardTitle}</p>         
+            </template>       
+    </lightning-card>
+</template>
