@@ -1,4 +1,4 @@
-BAH-SF-Tech-Excellence-24
+BAH-SF-Tech-Excellence-24 Repository
 BAH Tech Excellence Program January 2024 - March 2024 Repository for Tech Excellence Salesforce Development in collaboration with Stony Point, Inc. During this program, the class program used Apex, JavaScript, HTML, and CSS to create backend features, Visualforce, and LWC Components for a mock company "GenWatt Finance" and "GenWatt Recruiting"
 
 FEATURED BUILDS:
